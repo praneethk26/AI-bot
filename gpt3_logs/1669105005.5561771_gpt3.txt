@@ -1,0 +1,12 @@
+PROMPT:
+
+hello
+
+==========
+
+RESPONSE:
+
+.cljs$core$IFn$_invoke$arity$2 ? hello_world.hello_world.cljs$core$IFn$_invoke$arity$2("cljs",new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$p,1], null)) : hello_world.hello_world.call(null,"cljs",new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$p,1], null))));
+}
+
+//# sourceMappingURL=hello_world.js.map

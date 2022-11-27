@@ -1,0 +1,101 @@
+PROMPT:
+
+what ML
+
+==========
+
+RESPONSE:
+
+P) to use
+* How many neurons
+* Which activation functions
+* How many layers
+* What optimizer to use (SGD, Adam etc.)
+* What learning rate
+* Regularizationterms
+* Batch normalization or not
+* Dropout or not (what p?)
+* Batch size
+* Number of training samples
+* data augmentation or not
+* Sliding window or not
+* Sliding window step
+
+ 
+You can define/use class `Network` from the notebook to test your approach. If you use it, please do not modify it in anyway. We will use this notebook during testing and you will not have access to it during the exam.
+
+It is important to submit a Jupyter notebook that can be run. **If you use any classes or functions from external libraries, these must be included for grading**. 
+
+### Requirements for Grading
+* **Effort:** Your grade will be based on how much effort you put into solving the problem.
+* **Correctness:**The tasks will be officially graded according to correctness on the lab servers. 
+* **Completeness:**  The notebook is expected to be compilable with Jupiter and display results relevant to the task. What you present in your notebook will be graded, including plots.
+
+### General Notes
+
+* You should start early and devote a lot of time to this assignment.
+* All checkerboard pattern signals are assumed to span exactly two cycles.
+* A function call `plot_spectrum(sig,T,f0)` is provided to plot a signal and the obtained spectrum.
+* We recommend to use the anaconda distribution to setup your environment.
+* To setup your environment:
+```
+conda create -n ece654 python=3 numpy scipy matplotlib jupyter notebook librosa='0.6.0'
+conda activate ece654
+ipython kernel install --user --name=ece654
+cd $HOME/ece754/assignments/assignment1
+jupyter notebook --no-browser --port=8889 --notebook-dir=.
+```
+* Replace `$HOME/ece754/assignments/assignment1` by the actual path where your notebook is located.
+## Task 3
+
+In this task we are going to extract harmonic components from an audio signal. 
+
+&nbsp;
+
+### Task 3.1
+
+In this task you need to split a given audio signal into $M$ subbands using an STFT with a Hann window.
+
+**Instructions:**
+* Use `signal.hann` to compute a Hann window.
+* Use `signal.stft` to compute the STFT of a given signal using the Hann window.
+* Compute the $M$ subband data using the magnitude of the STFT. 
+* Return $M$ subband data along with the sampling rate and the corresponding frequencies returned by `signal.stft`. 
+
+&nbsp;
+
+### Task 3.2
+
+We are now going to estimate the fundamental frequency of each subband $m$ by computing the autocorrelation function $R_{xx}(l)$ of the $m$th subband signal $x_m[n]$.
+
+Note that the autocorrelation function of a discrete signal $x[n]$ is defined as:
+
+$$\begin{align}
+R_{xx}(l) & = \sum_{n}x[n]x[n+l]
+\end{align}$$
+
+**Instructions:**
+* Compute the autocorrelation function $R_{xx}(l)$ for each subban.
+* Find the autocorrelation lag index value $l_p$ that corresponds to the largest peak in $R_{xx}(l)$. 
+* From the value $l_p$, compute the estimated fundamental frequency in Hz for each subband using the following:
+
+$$\text{Frequency in Hz} = \frac{\text{Sampling Rate}}{l_p}$$
+&nbsp;
+
+## Task 4
+
+We are now going to combine the individual harmonic component and form the time domain signal back.
+
+&nbsp;
+
+### Task 4.1
+
+Get the $M$ subband time domain signals and the corresponding frequencies.
+
+&nbsp;
+
+### Task 4.2
+
+We are now going to combine the individual harmonic component and form the time domain signal back.
+
+Note that, for a

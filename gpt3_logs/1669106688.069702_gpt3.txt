@@ -1,0 +1,56 @@
+PROMPT:
+
+ai
+
+==========
+
+RESPONSE:
+
+_family == AF_INET) {
+    memcpy(&addr->sa, &saddr.sa, sizeof(struct sockaddr));
+  } else {
+    memcpy(&addr->sa6, &saddr6.sa, sizeof(struct sockaddr_in6));
+  }
+}
+
+void udp_local_endpoint::set_local(const char* host, uint16_t port) {
+
+  addr.alloc();
+
+  bzero(&addr->sa, sizeof(struct sockaddr_storage));
+
+  if (strchr(host, ':')) { /* ipv6 */
+
+    addr->sa.sa_family = AF_INET6;
+    struct sockaddr_in6* addr6 = &addr->sa6;
+
+    char zoneid[64];
+    bzero(zoneid, 64);
+
+    if (inet_pton(AF_INET6, host, &(addr6->sin6_addr)) != 1) {
+      std::cout << "inet_pton error" << std::endl;
+    }
+
+    addr6->sin6_port = htons(port);
+
+    if (inet_ntop(AF_INET6, &addr6->sin6_addr, _local_host, INET6_ADDRSTRLEN) == NULL) {
+      std::cout << "inet_ntop error" << std::endl;
+    }
+
+    _local_port = ntohs(addr6->sin6_port);
+
+  } else {
+
+    addr->sa.sa_family = AF_INET;
+    struct sockaddr_in* addr4 = &addr->sa;
+
+    bzero(addr4, sizeof(struct sockaddr_in));
+
+    addr4->sin_family = AF_INET;
+    addr4->sin_port = htons(port);
+
+    if (inet_pton(AF_INET, host, &(addr4->sin_addr)) != 1) {
+      std::cout << "inet_pton error" << std::endl;
+    }
+
+    st

@@ -1,0 +1,11 @@
+PROMPT:
+
+im a student
+
+==========
+
+RESPONSE:
+
+who wishes to become a software engineer - a profession that demands many things, but in sum requires excellent results in both the undergraduate and graduate studies. That is why I am interested in the state-of-the-art methods of learning: epistemology, critical thinking, efficient work with literature and sources of information, science research, argumentation and writing
+
+Progress Report I'm currently:

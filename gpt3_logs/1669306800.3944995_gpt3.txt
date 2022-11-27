@@ -1,0 +1,9 @@
+PROMPT:
+
+what is java
+
+==========
+
+RESPONSE:
+
+Java is a programming language.

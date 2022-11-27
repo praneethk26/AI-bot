@@ -1,0 +1,9 @@
+PROMPT:
+
+hello
+
+==========
+
+RESPONSE:
+
+Hello! Please ask your question and I will answer it to the best of my abilities.

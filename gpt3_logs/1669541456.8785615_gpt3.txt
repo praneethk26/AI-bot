@@ -1,0 +1,9 @@
+PROMPT:
+
+Im a student
+
+==========
+
+RESPONSE:
+
+at CSUSB (CSUN) and I took a programming class last semester. One of the things that we did in the class was to make a text based game. I made a type of blackjack game where the player tried to get a score as close to 21 as possible without going over.

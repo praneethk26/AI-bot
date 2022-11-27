@@ -1,0 +1,9 @@
+PROMPT:
+
+what is ai
+
+==========
+
+RESPONSE:
+
+helllo ai

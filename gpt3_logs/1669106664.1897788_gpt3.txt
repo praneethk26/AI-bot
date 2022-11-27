@@ -1,0 +1,15 @@
+PROMPT:
+
+hello
+
+==========
+
+RESPONSE:
+
+Hello, And Welcome To My Shop!
+
+I’m A Professional Artist And I Love Creating Unique Artwork.
+
+I Use A Wide Variety Of Materials And Techniques To Create My Art, And I’m Always Trying New Things.
+
+I Hope You Enjoy Shopping Here, And Please Feel Free To Contact Me With Any Questions.

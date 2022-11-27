@@ -1,0 +1,42 @@
+PROMPT:
+
+where
+
+==========
+
+RESPONSE:
+
+$\mathcal{C} \in \mathbb{R}^{d \times d}$ is the static correlation matrix of the latent variables in Equation (\ref{eq:lvm}) and $\Sigma = \diag(s_{i}) \in \mathbb{R}^{k \times k}$ is a diagonal matrix containing the variance $s_{i}$ associated with each latent space dimension from the linear links.
+This transformation guarantees the variance of the latent dimensions to be unitary, which simplifies their interpretability). 
+Hence, the log-likelihood equivalent to Equation (\ref{eq:lvm}) can be written as follows:
+
+\begin{equation}\label{eq:lvm_log_lik}
+\begin{split}
+&l(\mathbf{y}|\mathbf{X}, \mathbf{u}, \Sigma) = \\
+&- \frac{\mathrm{N}}{2} \left(\log(2\pi)k + \log |\Sigma| + \mbox{tr}\left[ \Sigma^{-1} \left(\mathbf{y} - \mathbf{X}(\mathbf{\bar{u}} + \mathbf{u})\right)^{T} \left(\mathbf{y} - \mathbf{X}(\mathbf{\bar{u}} + \mathbf{u})\right)\right]\right)
+\end{split}
+\end{equation}
+
+which is a Gaussian mixture model with mixture large $\mathrm{N}$ and $\mathbf{u}$ being the set of the normal distributed latent space variables. 
+Furthermore, the inclusion of the fixed effects $\bar{\mathbf{u}}$ is important because they take into account prior knowledge on the sample formation that might be present in the data itself.
+For example, if the sample contains groups of items that share common characteristics, such as a gene expression profile amplitude, then it will be reflected as a) fixed effects in the main effect $\bar{\mathbf{u}}$, b) a lower variance for the linear transforms components in $\Sigma$ and c) an increase in the correlation between the whole group.
+This latter can be seen by rewriting the covariance matrix $\Sigma = \mathbf{V} \Lambda \mathbf{V}^{\top}$ where $\mathbf{V} \in \mathbb{R}^{k \times k}$ is a matrix composed by eigenvectors and  $\Lambda \in \mathbb{R}^{k \times k}$  is a diagonal matrix composed by positive eigenvalues.
+Therefore, Equation (\ref{eq:lvm_log_lik}) becomes:
+
+\begin{equation}\label{eq:lvm_log_lik2}
+\begin{split}
+&l(\mathbf{y}|\mathbf{X}, \mathbf{u}, \Sigma) \propto \\
+&- \frac{\mathrm{N}}{2} \left(\log(2\pi)k  + \log |\Lambda| + \mbox{tr}\left[ \Lambda^{-1} \left(\mathbf{V}^{-1} \left(\mathbf{y} - \mathbf{X}(\mathbf{\bar{u}} + \mathbf{u})\right)\right)^{T} \left(\mathbf{V}^{-1} \left(\mathbf{y} - \mathbf{X}(\mathbf{\bar{u}} + \mathbf{u})\right)\right)\right]\right)
+\end{split}
+\end{equation}
+
+If the original features need to be transformed in the original scale, e.g., to be used in downstream methods or inference, the mapping $\mathbf{y} = \mathbf{X}(\mathbf{\bar{u}} + \mathbf{u}) + \epsilon$ is sufficient.
+Of course, the actual implementation of this process requires advanced numerical optimization methods which we describe in the next section.
+
+
+\subsection{Automated log-likelihood maximization}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{model_fit.pdf}
+\caption{
+Reproducibility of the fitted LVM parameters across $50$ simulations with a set of synthetic data (see text for details). The figure shows the

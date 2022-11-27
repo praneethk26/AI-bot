@@ -1,0 +1,28 @@
+PROMPT:
+
+hello
+
+==========
+
+RESPONSE:
+
+')
+
+const app = express()
+
+let server = http.createServer(app)
+
+server.listen(3000)
+
+// const server = app.listen(4000, function () {
+//   let host = server.address().address
+//   let port = server.address().port
+
+//   console.log('Example app listening at http://%s:%s', host, port)
+// })
+
+app.use(express.static(__dirname + '/dist/'))
+
+// app.get('/', (req, res) => {
+//   res.send('Hello World')
+// })

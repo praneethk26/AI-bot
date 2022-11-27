@@ -1,0 +1,11 @@
+PROMPT:
+
+do you know about neural networks
+
+==========
+
+RESPONSE:
+
+?
+
+Neural networks are a type of machine learning algorithm that are used to model complex patterns in data. Neural networks are similar to other machine learning algorithms, but they are composed of a large number of interconnected processing nodes, or neurons, that can learn to recognize patterns of input data.

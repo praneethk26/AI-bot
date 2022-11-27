@@ -1,0 +1,110 @@
+PROMPT:
+
+hi
+
+==========
+
+RESPONSE:
+
+).lengths[this.len1] = (typeof arguments[arguments.length - 1] === "number") ? arguments[arguments.length - 1] : 0;
+        if (arguments.length > 3) {
+            var ex = arguments[arguments.length - 2];
+            var ey = arguments[arguments.length - 3];
+            while ((this.lex >= this.lexer.COUNT && this.lex < this.lexer.EOF) || this.lex === this.lexer.POSITIONAL) {
+                this.restoreState(this.state);
+                return true;
+            }
+            if (!this.len1) {
+                if (this.lex === this.lexer.IDNT) {
+                    this.pos = [ex, ey];
+                } else {
+                    return this.throw("Identifier expected");
+                }
+                this.lex = this.lexer.WHITESPACE;
+            } else {
+                this.bef1 = [ex, ey];
+            }
+            return this.closeBrace();
+        } else {
+            if (!this.openBrace()) {
+                var r = this.syntax();
+                if (r) {
+                    this.push();
+                    this.end();
+                    return r;
+                } else {
+                    return false;
+                }
+            }
+            return true;
+        }
+    };
+    Parser.prototype.closeBrace = function () {
+        if (this.lex !== this.lexer.RIGHT_BRACE) {
+            return this.throw("`}` expected");
+        }
+        this.lex = this.lexer.WHITESPACE;
+        return true;
+    };
+    Parser.prototype.push = function () {
+        if (this.err) {
+            return;
+        }
+        if (this.labels) {
+            this.labels.forEach(function (l) { return l.unresolved = false; });
+            this.labels = [];
+        }
+        var v = this.value;
+        if (v != null) {
+            if (this.pos) {
+                v.pos = this.pos;
+                this.pos = null;
+            }
+            if (this.bef1) {
+                v.bef = this.bef1;
+                this.bef1 = null;
+            }
+            if (this.aft1) {
+                v.aft = this.aft1;
+                this.aft1 = null;
+            }
+            if (this.len1) {
+                v.lengths = this.len1;
+                this.len1 = null;
+            }
+            this.ast.push(v);
+            this.value = null;
+        }
+    };
+    Parser.prototype.end = function () {
+        if (this.err) {
+            return;
+        }
+        if (this.lex === this.lexer.EOF) {
+            if (this. braceLevel) {
+                return this.throw("Unclosed " + (this.braceLevel === 1 ? "paren/brace" : "brace"));
+            } else {
+                return this.throw("Unterminated statement");
+            }
+        }
+        if (this.braceLevel > 1) {
+            return this.throw("Unclosed " + (this.braceLevel === 1 ? "paren/brace" : "brace"));
+        }
+        this.push();
+        this.restoreState(this.state);
+    };
+    Parser.prototype.syntax = function () {
+        if (this.lex === this.lexer.EOF) {
+            if (this. braceLevel) {
+                return this.throw("Unclosed " + (this.braceLevel === 1 ? "paren/brace" : "brace"));
+            } else {
+                return this.throw("Unterminated statement");
+            }
+        }
+        if (this.braceLevel > 1) {
+            return this.throw("Unclosed " + (this.braceLevel === 1 ? "paren/brace" : "brace"));
+        }
+        if (this.lex === this.lexer.ERROR) {
+            return this.throw(this.lexer.value);
+        }
+        if (this.lex === this.lex

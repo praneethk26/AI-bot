@@ -1,0 +1,25 @@
+PROMPT:
+
+hello
+
+==========
+
+RESPONSE:
+
+Hello,
+
+
+
+I am new to this forum.
+
+I am looking for information about my family tree.
+
+My name is Mary.
+
+I live in Australia.
+
+My family comes from Ireland.
+
+I would like to know more about my family history.
+
+Thank you.

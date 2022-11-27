@@ -1,0 +1,9 @@
+PROMPT:
+
+hi
+
+==========
+
+RESPONSE:
+
+rosaki (Member of the selection committe)

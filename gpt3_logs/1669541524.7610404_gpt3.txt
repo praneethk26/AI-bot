@@ -1,0 +1,76 @@
+PROMPT:
+
+Ai
+
+==========
+
+RESPONSE:
+
+NXQV7
+    //                              AiNnCyYJd/ 0P/5i v+/Cp/oH
+    //                              I8CW1t+LlIz/3qIVyf4g4Zk
+    //                              sRPg9Xb20xS/0ILNBbz/Mq3
+    //                              ofljuNi7sb/0vZ2X7VivcO
+    //                              Cettd97u0g/8imaJh/crn/
+    //                              /rsP8oUbbh/viYn6v/Q6eW
+    //                              f7eIXhq3Xk/xr/mHn/Y +s
+    //                              WwRijnvfXk/tGb/cH4JP3
+    //                              GePd0J8Srt/0Gt67FjvX/
+    //                              s5p5/D+Jv/uV7Sn/In/Ou
+    //                              0X9WU6P/hHP/QQGA/yv
+    //                              tKf/Pn/mYf/gPn/mX//s
+    //                              9/vTofT/n/N/r//z/qP
+    //                              /gPlsR0G/cv/b//34/
+    //                              /r//L/3Pgq/v//6U//
+    //                              J//2/6v//z/7/8O
+    //                              h?/v//9X/i//9//
+    //                              9//v//30Lu7//
+    //                              //7V/n//v//
+    //                              n//3/7//3/
+    //                              D/f//v//n/
+    //                              b//x/7//x
+    //                              /7//v/z//
+    //                              6/ov/7/+v
+    //                              /7//3/4/
+    //                              4/H//7/b/
+    //                              /9//v/x/
+    //                              //g/f/v/
+    //                              +//z/r/
+    //                              8/8P+//
+    //                              7////7/
+    //                              //w/P/
+    //                              ///9/v/
+    //                              ////7+
+    //                              //+//
+    //                              ////76
+    //                              ////8/
+    //                              /////
+    //                              ////8/
+    //                              ////
+    //                              ////8
+    //                              ////
+    //                              ////
+    //                              ////
+    //                              ////
+    //                              ////
+    //                              ////
+};
+        
+//const unsigned char Num_buffer_B[41][8] = {
+const unsigned char Num_buffer_B[41][8] = {
+    
+    
+    
+//  0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41
+//  0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 383940    
+    
+    
+    
+   {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}, /*"-"*/
+   {0x08,0x18,0x28,0x28,0x28,0x28,0x28,0x28}, /*"/"*/
+   {0x28,0x28,0x28,0x28,0x28,0x28,0x28,0x28}, 
+
+   
+   
+   
+   {0x00,0x60,0x30,0x18,0x0C,0x06,0x03,0x00}, /*"0"*/

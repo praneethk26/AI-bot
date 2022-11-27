@@ -1,0 +1,11 @@
+PROMPT:
+
+how are you
+
+==========
+
+RESPONSE:
+
+?
+
+I'm doing fine, thank you.

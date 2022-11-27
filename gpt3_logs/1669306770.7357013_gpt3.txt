@@ -1,0 +1,13 @@
+PROMPT:
+
+Machine Learning
+
+==========
+
+RESPONSE:
+
+using Deep Learning
+
+Deep learning is a machine learning technique that uses a set of algorithms to model high-level abstractions in data.
+
+Deep learning is a branch of machine learning that is based on learning data representations, in a hierarchy of increasing complexity. Deep learning algorithms are able to learn these representations by using a large number of training examples and by using a variety of optimization techniques.

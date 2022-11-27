@@ -1,0 +1,11 @@
+PROMPT:
+
+what is Machine learning
+
+==========
+
+RESPONSE:
+
+?
+
+Machine learning is a method of teaching computers to learn from data, without being explicitly programmed.

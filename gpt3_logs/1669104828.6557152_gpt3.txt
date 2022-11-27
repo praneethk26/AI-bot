@@ -1,0 +1,97 @@
+PROMPT:
+
+all the available degrees
+
+==========
+
+RESPONSE:
+
+def add_degree(self,request):
+        '''the method gets the information via ajax and saves it to the database'''
+
+        #data from the view
+        data = json.loads(request.body)
+        name = data['degree_name']
+        code = data['degree_code']
+        level = data['degree_level']
+
+        #check if that degree already exist in the current faculty(that is currently being edited)
+        checkDegreeAccount = Degrees.objects.filter(degree_name=name, degree_code = code)
+
+        #this includes all the degrees from the current faculty
+        currentFacultyDegrees = self.faculty_info.degree_of_college.all()
+        currentFacultyDegreesNames = []
+
+        #creating a list of all the current faculty's degrees    
+        for i in range(0,len(currentFacultyDegrees)):
+            currentFacultyDegreesNames.append(currentFacultyDegrees[i].degree_name)
+
+        #check if it exists in another faculty. If so the current user cannot add it     
+        otherFacultiesDegrees = Degrees.objects.all()
+        for i in range(0, len(otherFacultiesDegrees)):
+            for j in range(len(otherFacultiesDegrees[i].degree_of_college.all())):
+                if otherFacultiesDegrees[i].degree_of_college.all()[j].degree_name == name:
+                    return JsonResponse ({"message": "That degree already exists at a different faculty"})
+
+        if checkDegreeAccount:
+            return JsonResponse({"message": "That degree already exists at this faculty."})
+        else:
+            new_degree = Degrees()
+            new_degree.degree_name = name
+            new_degree.degree_code = code
+            new_degree.degree_level = level
+            new_degree.save()
+
+            College_of_degree = self.faculty_info
+            new_degree.degree_of_college.add(College_of_degree)
+            # new_degree.save()
+
+            return HttpResponse(status=200)
+
+
+    #return all the degrees of the current faculty
+
+    def get_degrees(self, request):
+        currentFacultyDegrees = self.faculty_info.degree_of_college.all()
+        currentFacultyDegreesNames = []
+
+        for i in range(0,len(currentFacultyDegrees)):
+            currentFacultyDegreesNames.append([currentFacultyDegrees[i].degree_name, currentFacultyDegrees[i].degree_code])
+
+        return JsonResponse(currentFacultyDegreesNames,safe=False)
+
+
+
+    #add a new department to the faculty
+    def add_department(self,request):
+        '''the method gets the information via ajax and saves it to the database'''
+
+        #data from the view
+        data = json.loads(request.body)
+        name = data['dept_name']
+        code = data['dept_code']
+        short_description = data['short_description']
+        long_description = data['long_description']
+
+        #check if that department already exist in the current faculty(that is currently being edited)
+
+        checkDepartmentAccount = Departments.objects.filter(department_name=name, department_code=code)
+
+        currentFacultyDepartments = self.faculty_info.department_of_college.all()
+        currentFacultyDepartmentsNames = []
+
+        #creating a list of all the current faculty's departments
+        for i in range(0, len(currentFacultyDepartments)):
+            currentFacultyDepartmentsNames.append(currentFacultyDepartments[i].department_name)
+
+        if checkDepartmentAccount:
+            return JsonResponse({"message": "That department already exists at this faculty."})
+        else:
+            new_department = Departments()
+            new_department.department_name = name
+            new_department.department_code = code
+            new_department.department_short_description = short_description
+            new_department.department_long_description = long_description
+            new_department.save()
+
+            College

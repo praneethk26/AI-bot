@@ -1,0 +1,56 @@
+PROMPT:
+
+Nueral networks
+
+==========
+
+RESPONSE:
+
+, and Deep Learning
+
+%\cite{Caruana1992}
+\bibitem[Caruana et al. (1992)]{Caruana1992}
+Caruana, R., Langley, P., \& Shields, D.\ 1992, \textit{Machine learning: An artificial intelligence approach}, 2nd edn, Morgan Kaufmann Publishers, San Mateo, CA
+
+%\cite{Kramer2018}
+\bibitem[Kramer \& Chaname (2018)]{Kramer2018}
+Kramer, E., \& Chanam{\'e}, J.\ 2018, \textit{Characterizing the Mass Distribution of the Milky Way Disk via Asterodensity Profiling}, \apjs, 239, 36
+
+%\cite{Eyer2018}
+\bibitem[Eyer et al. (2018)]{Eyer2018}
+Eyer, L., Rimoldini, L., \& Mowlavi, N.\ 2018, \textit{The Gaia DR2 Cepheid sample}, \aap, 616, A12
+
+%\cite{Ivezic2008}
+\bibitem[Ivezi{\'c} et al. (2008)]{Ivezic2008}
+Ivezi{\'c}, Z., Tyson, J.~A., Abel, B., et al.\ 2008, \textit{LSST: From Science Drivers to Reference Design and Anticipated Data Products}, \textit{arXiv e-prints}, arXiv:0805.2366
+
+%\cite{Belokurov2018}
+\bibitem[Belokurov et al. (2018)]{Belokurov2018}
+Belokurov, V., Erkal, D., Evans, N.~W., et al.\ 2018, \textit{Gaia DR2 reveals thousands of fast moving stars in the solar neighbourhood}, \mnras, 478, 611
+
+%\cite{Fritz2018}
+\bibitem[Fritz et al. (2018)]{Fritz2018}
+Fritz, T.~K., Battaglia, G., Piffl, T., et al.\ 2018, \textit{The Gaia-ESO Survey: high-resolution spectroscopy of fast-moving stars out to 20 kpc}, \aap, 620, A95
+
+%\cite{Momany2006}
+\bibitem[Momany et al. (2006)]{Momany2006}
+Momany, Y., Zaggia, S., Gilmore, G., et al.\ 2006, \textit{The GAIA-ESO public spectroscopic survey}, \aap, 451, 515 
+
+%\cite{Amores2017}
+\bibitem[Amores et al. (2017)]{Amores2017}
+Amores, E.~B., L{\'o}pez-Corredoira, M., \& Garc{\'{\i}}a-Bellido, J.\ 2017, \textit{Milky Way potential models and Gaia DR1 data}, \mnras, 471, L110
+
+%\cite{Irwin1990}
+\bibitem[Irwin \& Hatzidimitriou (1995)]{Irwin1995}
+Irwin, M., \& Hatzidimitriou, D.\ 1995, \textit{A catalog of parameters for globular clusters and galactic stellar systems. Volume I - Compilation and coding of the catalog}, \apjs, 98, 441
+
+%\cite{Conroy2011}
+\bibitem[Conroy et al. (2011)]{Conroy2011}
+Conroy, C., Gunn, J.~E., \& White, M.\ 2011, \textit{The stellar initial mass function from z = 0 to z = 1}, \apj, 728, 36 
+
+%\cite{Lampeitl2010}
+\bibitem[Lampeitl et al. (2010)]{Lampeitl2010}
+Lampeitl, H., Smith, J.~A., Nichol, R.~C., et al.\ 2010, \textit{The Sloan Digital Sky Survey-II Supernova Survey: Photometric Data and Low-Redshift Spectra}, \apjs, 190, 424
+
+%\cite{Lampeitl2019}
+\bibitem[Lampeitl et al. (2019)]{Lam

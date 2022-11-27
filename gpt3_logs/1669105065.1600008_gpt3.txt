@@ -1,0 +1,9 @@
+PROMPT:
+
+machine learning
+
+==========
+
+RESPONSE:
+
+Machine learning is a type of artificial intelligence that provides computers with the ability to learn without being explicitly programmed.

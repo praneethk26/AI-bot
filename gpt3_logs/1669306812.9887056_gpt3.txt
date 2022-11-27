@@ -1,0 +1,11 @@
+PROMPT:
+
+do you know MIT
+
+==========
+
+RESPONSE:
+
+is the best college in the world?
+
+I did not know that!

@@ -1,0 +1,9 @@
+PROMPT:
+
+what is AI
+
+==========
+
+RESPONSE:
+
+There is no one answer to this question as the term "AI" can refer to a wide range of different technologies and approaches. Broadly speaking, AI can be defined as any kind of computer system that is able to perform tasks that would normally require human intelligence, such as visual perception, natural language understanding, and decision-making.

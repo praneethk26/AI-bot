@@ -1,0 +1,11 @@
+PROMPT:
+
+hello
+
+==========
+
+RESPONSE:
+
+Hello from Russiae
+
+Hello from Russia! How are you doing?

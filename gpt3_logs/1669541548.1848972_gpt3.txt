@@ -1,0 +1,42 @@
+PROMPT:
+
+Ml
+
+==========
+
+RESPONSE:
+
+1).
+
+    # Now let's take a look at the ratio of the division of two of these activated
+    # units. For example:
+    # - The division of the top most row (10.0, 28.2) by the second row (8.2, 19.2) is (1.22, 1.47)
+    # - The division of the bottom most row (3.4, 2.4) by the second last row (4.4, 3.4) is (0.77, 0.71)
+    #
+    # Assuming that the final output of the neural net is simply the mean of all rows
+    # in the matrix of activated units we would then expect a ratio of: (1.22 + 1.47 + 0.77 + 0.71) / 4 = 1.14
+    ratio = sum(sum(Ml1[i] / Ml1[i + 1]) for i in range(0, len(Ml1) - 1)) / (len(Ml1) - 1)
+
+    if group == "test":
+        x_test.append(rabbit_speed)
+        y_test.append(ratio)
+    else:
+        x_train.append(rabbit_speed)
+        y_train.append(ratio)
+
+# Print the ratio for each of the four groups
+print("\n{}: {}".format("Training", np.mean(y_train)))
+print("{}: {}".format("Validation", np.mean(y_valid)))
+print("{}: {}".format("Testing", np.mean(y_test)))
+
+plt.scatter(x_train, y_train, s=8, color='blue', label="Training")
+plt.scatter(x_valid, y_valid, s=8, color='red', label="Validation")
+plt.scatter(x_test, y_test, s=8, color='green', label="Testing")
+plt.grid(True)
+plt.title(
+    "Training set vs. Validation set vs. Testing set for average ratio of units for three hidden layers where\n"
+    "  * Layer 1 is of size '{}'\n"
+    "  * Layer 2 is of size '{}'\n"
+    "  * Layer 3 is of size '{}'".format(layer1_size, layer2_size, layer3_size))
+plt.legend()
+plt.show()
